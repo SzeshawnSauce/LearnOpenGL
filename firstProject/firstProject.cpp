@@ -143,6 +143,12 @@ int main()
     // Main while loop
     while(!glfwWindowShouldClose(window))
     {
+        glClearColor(0.0f, 0.13f, 0.17f, 1.0f);
+        glClear(GL_COLOR_BUFFER_BIT);
+        glUseProgram(shaderProgram);
+        glBindVertexArray(VAO);
+        glDrawArrays(GL_TRIANGLES, 0, 3);
+        glfwSwapBuffers(window);
         // Take care of all GLFW events, e.g. keyboard/mouse inputs, window resizing, etc.
         glfwPollEvents();
     }
